@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,8 +14,8 @@
     /* NOTE: light theme for later */
     /*--background: 57.33 100% 91.18%;*/
     /*--foreground: 151.24 100% 23.73%;*/
-    --background: 151.24 100% 23.73%;
-    --foreground: 57.33 100% 91.18%;
+    --background: 2 69% 30%;
+    --foreground: 57.33 100% 91.18%; /*(2, 69%, 30%)*/
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -77,12 +77,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-white text-foreground;
+    @apply bg-white text-primary;
   }
 }
 
 html,
 body {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat';
   scroll-behavior: smooth;
 }

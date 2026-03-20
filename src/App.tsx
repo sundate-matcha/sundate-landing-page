@@ -1,5 +1,5 @@
 // import { ThemeProvider } from "@/components/theme-provider";
-import { MainLayout } from "./components/MainLayout.tsx";
+import { MainLayout } from "./pages/MainLayout.tsx";
 import Loader from "@/components/Loader";
 import { useEffect, useState } from "react";
 

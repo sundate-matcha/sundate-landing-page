@@ -1,90 +1,100 @@
 import { CopyrightIcon } from 'lucide-react'
-import SparklesText from '@/components/magicui/sparkles-text.tsx'
-
+import { FaFacebook, FaInstagram, FaThreads, FaTiktok } from 'react-icons/fa6'
+import Logo from '../assets/images/logo.png'
+import LogoText from '../assets/images/typeface.png'
 function Footer() {
   return (
     <footer
+      id={'contact'}
       className={
-        'pt-6 pb-6 mb-[65px] bg-background text-foreground text-center mt-5 md:mt-20'
+        'pt-6 pb-6 bg-background text-foreground text-center'
       }
     >
       <div
         className={
-          'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-left px-6 md:px-20'
+          'grid grid-cols-1 lg:grid-cols-2 px-6 md:px-20 justify-around'
         }
       >
         <div>
-          <a href={'#'} className={'cursor-pointer'}>
-            <SparklesText
-              text={'Mễ'}
-              className="font-semibold relative z-10 text-5xl before:content-['Mễ'] before:text-black before:absolute before:left-[-6px]"
+          <a
+            href={'#'}
+            className={
+              'cursor-pointer justify-center flex items-center gap-2 flex-row md:flex-col '
+            }
+          >
+            <img src={Logo} alt="Sundate Logo" className={'md:h-16 h-8'} />
+
+            <img
+              src={LogoText}
+              alt="Sundate Logo Text"
+              className={'md:h-16 h-8'}
             />
-            <p className={"text-xl font-['Pecita'] relative z-10 mt-2"}>
-              Drinks & Snacks
-            </p>
           </a>
-          <p className={'mt-2'}>Perfect Sips, Tasty Bites</p>
         </div>
-        <div>
-          <p className={'font-bold text-primary mt-4 xs:mt-0'}>Menu chính</p>
-          <p className={'mt-2'}>
-            <a href={'#'} className={'hover:text-primary transition-all'}>
-              Về chúng tớ
-            </a>
-          </p>
-          <p className={'mt-2'}>
-            <a href={'#menu'} className={'hover:text-primary transition-all'}>
-              Menu
-            </a>
-          </p>
-        </div>
-        <div>
-          <p className={'font-bold text-primary mt-4 xs:mt-0'}>Liên hệ</p>
-          <p className={'mt-2'}>
-            Email:{' '}
-            <a
-              href={'mailto:test@gmail.com'}
-              className={'hover:text-primary transition-all'}
+        <div className="my-10 md:my-0 md:mb-10 ">
+          <div className="text-center mb-5">
+            <div>
+              📍102B Tran Quoc Toan, Xuan Hoa Ward, HCM City
+            </div>
+          </div>
+          <div className="text-center mb-10">
+            <div>
+              📍41 khu pho My Tu 3, Tan Phong Ward, District 7, HCM City
+            </div>
+          </div>
+          
+          <div className="flex justify-center gap-10 mb-10">
+            <div
+              className="cursor-pointer"
+              onClick={() =>
+                window.open(
+                  'https://www.facebook.com/profile.php?id=61576618956568',
+                  '_blank',
+                )
+              }
             >
-              test@gmail.com
-            </a>
-          </p>
-          <p className={'mt-2'}>
-            Số điện thoại:{' '}
-            <a
-              href={'tel:0376613165'}
-              className={'hover:text-primary transition-all'}
+              <FaFacebook size={30} />
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() =>
+                window.open(
+                  'https://www.instagram.com/sundate.matchashelter',
+                  '_blank',
+                )
+              }
             >
-              0376-613-165
-            </a>
-          </p>
-        </div>
-        <div>
-          <p className={'font-bold text-primary mt-4 xs:mt-0'}>Địa chỉ</p>
-          <p className={'mt-2 font-normal pointer-events-none'}>
-            6 Đường số 14, Linh Chiểu
-          </p>
-          <p className={'mt-2 font-normal pointer-events-none'}>
-            TP. Thủ Đức, TP. Hồ Chí Minh
-          </p>
+              <FaInstagram size={30} />
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() =>
+                window.open(
+                  'https://www.threads.com/@sundate.matchashelter',
+                  '_blank',
+                )
+              }
+            >
+              <FaThreads size={30} />
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() =>
+                window.open('https://www.tiktok.com/@sundatematcha', '_blank')
+              }
+            >
+              <FaTiktok size={30} />
+            </div>
+          </div>
+          <div className="text-center">
+            MONDAY - SUNDAY: 08:30 - 22:30
+          </div>
         </div>
       </div>
-      <div
-        className={
-          'text-center border-t border-solid border-foreground pt-6 mt-5'
-        }
-      >
+      <div className={'text-center text-sm'}>
         <p>
-          <CopyrightIcon className={'size-4 inline'} /> 2024 Mễ. All rights
-          reserved. | Design by{' '}
-          <a
-            href={'https://github.com/hoapooh'}
-            target={'_blank'}
-            rel={'noopener'}
-            className={'underline hover:text-primary transition-all'}
-          >
-            Hoapooh
-          </a>
+          <CopyrightIcon className={'size-4 inline'} /> 2026 Sundate. All rights
+          reserved.
         </p>
       </div>
     </footer>

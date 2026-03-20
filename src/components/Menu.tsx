@@ -1,9 +1,11 @@
 import MyFigure from '@/components/MyFigure.tsx'
 import BoxReveal from '@/components/magicui/box-reveal.tsx'
+import DrinkMenu from '../assets/images/drinks.png'
+import SnackMenu from '../assets/images/snacks.png'
 
 function Menu() {
   return (
-    <div id={'menu'} className={'bg-white pt-5 md:pt-24 pb-3'}>
+    <div id={'menu'} className={'bg-white pt-5 md:pt-4 pb-3'}>
       <h2 className={'flex items-center justify-center text-3xl text-primary'}>
         <BoxReveal boxColor={'hsl(151.24, 100%, 23.73%)'} duration={0.4}>
           <span>Menu của chúng tớ</span>
@@ -15,7 +17,7 @@ function Menu() {
         }
       >
         <MyFigure
-          imgSource={'/images/drinks.png'}
+          imgSource={DrinkMenu}
           imgAlt={
             'Menu về thức uống của chúng tớ gồm Matcha và Dalgona' + ' coffee'
           }
@@ -23,7 +25,7 @@ function Menu() {
         />
 
         <MyFigure
-          imgSource={'/images/snacks.png'}
+          imgSource={SnackMenu}
           imgAlt={
             'Menu về những món ăn vặt của chúng tớ gồm khoai tây que lắc phô mai và tóp mỡ chiên mắm tỏi'
           }

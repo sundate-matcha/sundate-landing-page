@@ -4,6 +4,7 @@ import Logo from '../../assets/images/logo.png'
 import LogoText from '../../assets/images/typeface.png'
 
 const NAV_ITEMS = [
+  { href: '#aboutus', label: 'About Us' },
   { href: '#menu', label: 'Menu' },
   { href: '#', label: 'Workshop' },
   { href: '#contact', label: 'Contact' },

@@ -1,9 +1,12 @@
 import Header from '@/components/Header/Header'
 // import DockNav from '@/components/DockNav.tsx'
-import Footer from '@/components/Footer.tsx'
-import Menu from '@/components/Menu.tsx'
+import Footer from '@/components/Footer/Footer'
+import Menu from '@/components/Menu/Menu'
 import ImgBgMobile from '../assets/images/chawan_photo.jpg'
 import ImgBgDesktop from '../assets/images/chawan_photo1.jpg'
+import About from '@/components/About/About'
+import Intro from '@/components/Intro/Intro'
+import Feedback from '@/components/Feedback'
 // import Hero from '@/components/Hero.tsx'
 
 // This is for dark mode if needed
@@ -23,10 +26,16 @@ export function MainLayout() {
           <img
             src={ImgBgMobile}
             alt="Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover brightness-75"
           />
         </picture>
-        <div className="relative z-10 mt-[100vh]">
+        <div className="relative z-10 h-[100vh] justify-center items-center flex">
+          <Intro />
+        </div>
+        <div className="relative z-10">
+          <About />
+        </div>
+        <div className="relative z-10">
           <Menu />
         </div>
       </main>

@@ -5,7 +5,7 @@
 
 import { useState, useCallback } from 'react'
 import { httpClient } from '../config/http-client'
-import { ApiResponse } from '../types'
+// import { ApiResponse } from '../types'
 
 interface UseApiState<T> {
   data: T | null

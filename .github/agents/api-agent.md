@@ -1,4 +1,4 @@
----
+<!-- ---
 name: API Configuration Agent
 description: >
   **Use when:** Setting up API client configurations, creating API endpoints, managing authentication, 
@@ -98,4 +98,4 @@ After using this agent, you might want:
 - A data-fetching skill with React Query integration patterns
 - API testing utilities for E2E testing
 - Environment validation to ensure all required variables are set
-- API monitoring/logging instructions for production debugging
+- API monitoring/logging instructions for production debugging -->

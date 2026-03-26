@@ -17,6 +17,7 @@ function Footer() {
   }
 
   const branch1 = 'fEq35W3XfjHW683c9'
+  const branch2 = 'FdnNxJMoHUJi36Z76'
 
   return (
     <footer
@@ -47,10 +48,9 @@ function Footer() {
         <div className="my-10 md:my-0 md:mb-10">
           <div
             className="text-center mb-5 cursor-pointer"
-            onClick={() =>
-              handleAddressClick('102B Tran Quoc Toan, Xuan Hoa Ward, HCM City')
-            }
-          ><FaLocationDot className="inline-block mr-2" />
+            onClick={() => handleAddressClick(branch2)}
+          >
+            <FaLocationDot className="inline-block mr-2" />
             <span>102B Tran Quoc Toan, Xuan Hoa Ward, HCM City</span>
           </div>
           <div
@@ -58,7 +58,9 @@ function Footer() {
             onClick={() => handleAddressClick(branch1)}
           >
             <FaLocationDot className="inline-block mr-2" />
-            <span>41 khu pho My Tu 3, Tan Phong Ward, District 7, HCM City</span>
+            <span>
+              41 khu pho My Tu 3, Tan Phong Ward, District 7, HCM City
+            </span>
           </div>
 
           <div className="flex justify-center gap-10 mb-10">

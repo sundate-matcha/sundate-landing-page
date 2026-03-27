@@ -14,8 +14,8 @@
     /* NOTE: light theme for later */
     /*--background: 57.33 100% 91.18%;*/
     /*--foreground: 151.24 100% 23.73%;*/
-    --background: 2 69% 30%;
-    --foreground: 57.33 100% 91.18%; /*(2, 69%, 30%)*/
+    --background: 2 69% 30%; /*đỏ*/
+    --foreground: 47.27 100% 93.53%; /*vàng*/
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -81,8 +81,16 @@
   }
 }
 
+@font-face {
+  font-family: 'SundateFixed-Regular';
+  src: url('./assets/fonts/SundateFixed-Regular.otf') format('opentype');
+  /* font-weight: 400; */
+  /* font-style: normal;
+  font-display: swap; */
+}
+
 html,
 body {
-  font-family: 'Montserrat';
+  font-family: 'SundateFixed-Regular';
   scroll-behavior: smooth;
 }

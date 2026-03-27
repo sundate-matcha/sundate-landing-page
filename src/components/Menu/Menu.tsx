@@ -4,7 +4,7 @@ import SnackMenu from '@/assets/images/chawan_photo.jpg'
 
 function Menu() {
   return (
-    <div id={'menu'} className={'bg-foreground pt-5 md:pt-4 pb-3'}>
+    <div id={'menu'} className={'bg-foreground py-28 md:py-40'}>
       <div
         className={
           'flex flex-col gap-6 md:items-center md:justify-between mx-auto w-[min(1200px,92%)]'

@@ -11,10 +11,10 @@ const NAV_ITEMS = [
 ]
 
 const NAV_LINK_CLASS =
-  'relative px-4 hover:border-b-0 duration-200 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-foreground before:transition-all before:duration-300 hover:before:left-0 hover:before:w-full'
+  'text-4xl relative px-4 hover:border-b-0 duration-200 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-foreground before:transition-all before:duration-300 hover:before:left-0 hover:before:w-full'
 
 const CTA_BUTTON_CLASS =
-  'px-4 py-2 border-2 border-solid border-black rounded-lg bg-foreground text-background transition-all duration-200 shadow-[4px_6px_0_rgb(0,0,0)] hover:shadow-[2px_3px_0_rgb(0,0,0)] hover:translate-x-0.5 hover:translate-y-0.5 active:saturate-50'
+  'text-4xl px-4 py-2 rounded-lg md:bg-foreground bg-background md:text-background text-foreground transition-all duration-200 '
 
 function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -49,7 +49,7 @@ function Header() {
   return (
     <header
       className={
-        'px-4 md:px-[20%] py-6 flex items-center justify-between bg-transparent w-full z-50 text-foreground'
+        'px-4 md:px-20 py-6 flex items-center justify-between bg-background w-full h-[10%] z-50 text-foreground fixed top-0 left-0'
       }
     >
       <a
@@ -58,9 +58,13 @@ function Header() {
           'cursor-pointer justify-center flex items-center gap-4 flex-row '
         }
       >
-        <img src={Logo} alt="Sundate Logo" className={'h-10'} />
+        <img src={Logo} alt="Sundate Logo" className={'md:h-14 h-10'} />
 
-        <img src={LogoText} alt="Sundate Logo Text" className={'h-10'} />
+        <img
+          src={LogoText}
+          alt="Sundate Logo Text"
+          className={'md:h-14 h-10'}
+        />
       </a>
 
       <button
@@ -71,25 +75,24 @@ function Header() {
         aria-expanded={isDrawerOpen}
         aria-controls="mobile-nav-drawer"
         className={
-          'md:hidden inline-flex items-center justify-center size-10 bg-transparent text-primary-foreground'
+          'md:hidden inline-flex items-center justify-center size-10 bg-transparent text-foreground'
         }
         onClick={() => setIsDrawerOpen((currentValue) => !currentValue)}
       >
-        {isDrawerOpen ? (
-          <XIcon className={'size-5'} />
-        ) : (
-          <MenuIcon className={'size-5'} />
-        )}
+        <MenuIcon className={'size-8'} />
       </button>
 
       <nav className={'hidden md:flex md:items-center'}>
-        {NAV_ITEMS.map((item) => (
-          <a key={item.label} href={item.href} className={NAV_LINK_CLASS}>
-            {item.label}
-          </a>
-        ))}
+        <div className={'flex items-center gap-6 mr-6'}>
+          {NAV_ITEMS.map((item) => (
+            <a key={item.label} href={item.href} className={NAV_LINK_CLASS}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+
         <button className={CTA_BUTTON_CLASS} onClick={handleBookingClick}>
-          Đặt bàn ngay
+          Reservation
         </button>
       </nav>
 
@@ -111,7 +114,7 @@ function Header() {
           id="mobile-nav-drawer"
           role="dialog"
           aria-modal="true"
-          className={`absolute right-0 top-0 h-full w-[min(80vw,320px)] bg-white text-primary shadow-2xl transform transition-transform duration-300 ${
+          className={`absolute right-0 top-0 h-full w-[min(80vw,320px)] bg-foreground shadow-2xl transform transition-transform duration-300 ${
             isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -133,7 +136,7 @@ function Header() {
               <a
                 key={`mobile-${item.label}`}
                 href={item.href}
-                className={'text-lg border-b border-black/10 pb-2'}
+                className={'text-4xl text-background border-b border-black/10 pb-2'}
                 onClick={closeDrawer}
               >
                 {item.label}
@@ -147,7 +150,7 @@ function Header() {
                 handleBookingClick()
               }}
             >
-              Đặt bàn ngay
+              Reservation
             </button>
           </nav>
         </aside>

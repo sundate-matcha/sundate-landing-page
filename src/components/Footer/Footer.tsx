@@ -7,8 +7,8 @@ import {
   FaPhone,
   FaLocationDot,
 } from 'react-icons/fa6'
-import Logo from '@/assets/images/logo.png'
-import LogoText from '@/assets/images/typeface.png'
+import { Separator } from '@/components/ui/separator.tsx'
+
 function Footer() {
   const handleAddressClick = (address: string) => {
     const query = encodeURIComponent(address)
@@ -22,9 +22,11 @@ function Footer() {
   return (
     <footer
       id={'contact'}
-      className={'pt-6 pb-6 bg-background text-foreground text-center'}
+      className={
+        'md:px-10 px-4 py-4 bg-background text-foreground text-center fixed bottom-0 left-0 w-full h-[7%] z-50 flex flex-row md:justify-between items-center'
+      }
     >
-      <div
+      {/* <div
         className={
           'grid grid-cols-1 lg:grid-cols-2 mt-10 px-6 md:px-20 justify-around'
         }
@@ -73,7 +75,7 @@ function Footer() {
                 )
               }
             >
-              <FaFacebook size={30} />
+              <FaFacebook size={20} />
             </div>
             <div
               className="cursor-pointer"
@@ -84,7 +86,7 @@ function Footer() {
                 )
               }
             >
-              <FaInstagram size={30} />
+              <FaInstagram size={20} />
             </div>
             <div
               className="cursor-pointer"
@@ -95,7 +97,7 @@ function Footer() {
                 )
               }
             >
-              <FaThreads size={30} />
+              <FaThreads size={20} />
             </div>
             <div
               className="cursor-pointer"
@@ -103,7 +105,7 @@ function Footer() {
                 window.open('https://www.tiktok.com/@sundatematcha', '_blank')
               }
             >
-              <FaTiktok size={30} />
+              <FaTiktok size={20} />
             </div>
           </div>
           <div
@@ -113,10 +115,75 @@ function Footer() {
             <FaPhone className="inline-block mr-2" />
             <span>028 1234 5678</span>
           </div>
-          <div className="text-center">MONDAY - SUNDAY: 08:30 - 22:30</div>
+          <div className="text-center">MONDAY - SUNDAY: 08:20 - 22:20</div>
+        </div>
+      </div> */}
+      {/* Left section */}
+      <div className="flex items-center justify-center gap-4 md:gap-8">
+        <div
+          className="text-center cursor-pointer flex items-center gap-4"
+          // onClick={() => handleAddressClick(branch2)}
+        >
+          <FaLocationDot className="inline-block" size={30} />
+          <p className="hidden md:block text-2xl">location</p>
+        </div>
+
+        <Separator orientation="vertical" className="h-10 bg-foreground" />
+        <div
+          className="text-center cursor-pointer flex items-center gap-4"
+          // onClick={() => handleAddressClick(branch2)}
+        >
+          <FaPhone className="inline-block" size={30} />
+          <p className="hidden md:block text-2xl">hotline</p>
+        </div>
+        <Separator orientation="vertical" className="h-10 bg-foreground" />
+        <div className="flex justify-center gap-4">
+          <div
+            className="cursor-pointer"
+            onClick={() =>
+              window.open(
+                'https://www.facebook.com/profile.php?id=61576618956568',
+                '_blank',
+              )
+            }
+          >
+            <FaFacebook size={30} />
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() =>
+              window.open(
+                'https://www.instagram.com/sundate.matchashelter',
+                '_blank',
+              )
+            }
+          >
+            <FaInstagram size={30} />
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() =>
+              window.open(
+                'https://www.threads.com/@sundate.matchashelter',
+                '_blank',
+              )
+            }
+          >
+            <FaThreads size={30} />
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() =>
+              window.open('https://www.tiktok.com/@sundatematcha', '_blank')
+            }
+          >
+            <FaTiktok size={30} />
+          </div>
         </div>
       </div>
-      <div className={'text-center text-sm'}>
+
+      {/* Right section */}
+      <div className={'hidden md:block text-center text-2xl'}>
         <p>
           <CopyrightIcon className={'size-4 inline'} /> 2026 Sundate. All rights
           reserved.

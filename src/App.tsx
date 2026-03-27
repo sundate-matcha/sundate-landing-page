@@ -1,29 +1,20 @@
 // import { ThemeProvider } from "@/components/theme-provider";
-import { MainLayout } from "./pages/MainLayout.tsx";
-import Loader from "@/components/Loader";
-import { useEffect, useState } from "react";
+import { MainLayout } from './pages/MainLayout.tsx'
+import Loader from '@/components/Loader'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
+      setIsLoading(false)
+    }, 2500)
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
-  return (
-    // This is for dark mode if needed
-    // <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-    <MainLayout />
-    // </ThemeProvider>
-  );
+  return <>{isLoading ? <Loader /> : <MainLayout />}</>
 }
 
-export default App;
+export default App

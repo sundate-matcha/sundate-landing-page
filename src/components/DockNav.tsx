@@ -115,8 +115,8 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: '#', icon: HomeIcon, label: 'Trang chủ' },
-    { href: '#', icon: InfoIcon, label: 'About Us' },
+    { href: '#', icon: HomeIcon, label: 'Trang chủ', color: 'text-foreground' },
+    { href: '#', icon: InfoIcon, label: 'About Us', color: 'text-foreground' },
   ],
   contact: {
     social: {
@@ -155,7 +155,7 @@ function DockNav() {
         <TooltipProvider>
           <Dock
             direction="middle"
-            className={`bg-black border-black dock-nav mt-0 w-[calc(100%_-_64px)] sm:w-full overflow-x-auto overflow-y-hidden `}
+            className={`bg-background w-full overflow-x-auto overflow-y-hidden `}
           >
             {DATA.navbar.map((item) => (
               <DockIcon key={item.label}>
@@ -230,11 +230,6 @@ function DockNav() {
         </TooltipProvider>
       </div>
       {/*  Gradient color: bg-gradient-to-r from-[#abecd6] to-[#fbed96] */}
-      <div
-        className={
-          'fixed z-[998] bottom-0 right-0 left-0 h-[64px] backdrop-blur-[4px]'
-        }
-      ></div>
     </>
   )
 }

@@ -16,7 +16,11 @@ const NAV_LINK_CLASS =
 const CTA_BUTTON_CLASS =
   'text-4xl px-4 py-2 rounded-lg md:bg-foreground bg-background md:text-background text-foreground transition-all duration-200 '
 
-function Header() {
+interface HeaderProps {
+  isMenuVisible?: boolean
+}
+
+function Header({ isMenuVisible = false }: HeaderProps) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   const handleBookingClick = () => {
@@ -48,9 +52,9 @@ function Header() {
 
   return (
     <header
-      className={
-        'px-4 md:px-20 py-6 flex items-center justify-between bg-background w-full h-[10%] z-50 text-foreground fixed top-0 left-0'
-      }
+      className={`px-4 md:px-20 py-6 flex items-center justify-between w-full h-[10%] z-50 text-foreground fixed top-0 left-0 transition-colors duration-500 ${
+        isMenuVisible ? 'bg-black text-foreground' : 'bg-background text-foreground'
+      }`}
     >
       <a
         href={'#'}
@@ -136,7 +140,9 @@ function Header() {
               <a
                 key={`mobile-${item.label}`}
                 href={item.href}
-                className={'text-4xl text-background border-b border-black/10 pb-2'}
+                className={
+                  'text-4xl text-background border-b border-black/10 pb-2'
+                }
                 onClick={closeDrawer}
               >
                 {item.label}

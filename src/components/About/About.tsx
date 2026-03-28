@@ -14,7 +14,7 @@ function About() {
     <section
       id={'aboutus'}
       className={
-        'overflow-hidden bg-foreground py-28 md:py-40 flex flex-col items-center justify-center md:gap-20'
+        'overflow-hidden bg-foreground flex flex-col items-center justify-center md:gap-20 h-screen'
       }
     >
       <div

@@ -9,7 +9,11 @@ import {
 } from 'react-icons/fa6'
 import { Separator } from '@/components/ui/separator.tsx'
 
-function Footer() {
+interface FooterProps {
+  isMenuVisible?: boolean
+}
+
+function Footer({ isMenuVisible = false }: FooterProps) {
   const handleAddressClick = (address: string) => {
     const query = encodeURIComponent(address)
     const url = `https://maps.app.goo.gl/${query}`
@@ -22,9 +26,9 @@ function Footer() {
   return (
     <footer
       id={'contact'}
-      className={
-        'md:px-10 px-4 py-4 bg-background text-foreground text-center fixed bottom-0 left-0 w-full h-[7%] z-50 flex flex-row md:justify-between items-center'
-      }
+      className={`md:px-10 px-4 py-4 text-center fixed bottom-0 left-0 w-full h-[7%] z-50 flex flex-row md:justify-between items-center transition-colors duration-500 ${
+        isMenuVisible ? 'bg-black text-foreground' : 'bg-background text-foreground'
+      }`}
     >
       {/* <div
         className={

@@ -83,7 +83,7 @@ function DesktopNavSection({
               </button>
 
               {isOpen ? (
-                <div className="absolute mt-2 min-w-[220px] rounded-lg bg-background shadow-xl z-50">
+                <div className="absolute mt-2 min-w-[220px] rounded-lg bg-background shadow-[0_8px_8px_rgba(0,0,0,0.45)]  z-50 border border-black/50">
                   {item.children.map((child) => (
                     <Link
                       key={`${item.label}-${child.label}`}

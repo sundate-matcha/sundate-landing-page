@@ -27,12 +27,12 @@ const DialModal: FC<DialModalProps> = ({ isOpen, onClose }) => {
           className="w-full max-w-[360px]"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="rounded-2xl bg-background text-foreground hover:bg-foreground hover:text-background shadow-[0_12px_24px_rgba(0,0,0,0.45)] px-6 py-8">
+          <div className="rounded-2xl bg-background text-foreground hover:bg-foreground hover:text-background shadow-[0_8px_8px_rgba(0,0,0,0.45)] px-6 py-8">
             <h3 className="text-[62px] leading-none text-center">Hotline</h3>
 
             <button
               onClick={handleDial}
-              className="mt-3 w-full flex items-center justify-center gap-2 text-[50px] leading-none hover:opacity-90 transition-opacity"
+              className="mt-3 w-full flex items-center justify-center gap-2 text-[50px] leading-none"
               aria-label="Call hotline 0858817777"
             >
               <FaPhone className="text-[28px]" />

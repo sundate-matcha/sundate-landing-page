@@ -45,8 +45,8 @@ const LocationModal: FC<LocationModalProps> = ({ isOpen, onClose }) => {
         //   onClick={(e) => e.stopPropagation()}
         >
           {/* Opening Hours Section */}
-          <div className="bg-transparent px-6 py-6 justify-center items-center flex">
-            <div className="bg-background px-8 py-2 text-center rounded-2xl md:w-1/3 text-foreground">
+          <div className="bg-transparent px-6 py-6 justify-center items-center flex ">
+            <div className="bg-background px-8 py-2 text-center rounded-2xl md:w-1/3 text-foreground shadow-[0_8px_8px_rgba(0,0,0,0.45)] ">
               <h3 className="text-6xl mb-2">Opening</h3>
               <p className="text-4xl mb-1">monday - sunday</p>
               <p className="text-4xl">08:30 - 22:30</p>
@@ -58,7 +58,7 @@ const LocationModal: FC<LocationModalProps> = ({ isOpen, onClose }) => {
             {branches.map((branch) => (
               <div
                 key={branch.id}
-                className="flex items-center gap-4 cursor-pointer hover:bg-foreground hover:text-background text-foreground transition-opacity bg-background p-4 rounded-2xl justify-center md:w-1/2 w-full"
+                className="flex items-center gap-4 cursor-pointer hover:bg-foreground hover:text-background text-foreground transition-opacity bg-background p-4 rounded-2xl justify-center md:w-1/2 w-full shadow-[0_8px_8px_rgba(0,0,0,0.45)] "
                 onClick={() => handleOpenMap(branch.placeId)}
               >
                 <FaLocationDot className="text-xl mt-1" />

@@ -58,11 +58,11 @@ const LocationModal: FC<LocationModalProps> = ({ isOpen, onClose }) => {
             {branches.map((branch) => (
               <div
                 key={branch.id}
-                className="flex items-center gap-4 cursor-pointer hover:bg-foreground hover:text-background text-foreground transition-opacity bg-background p-4 rounded-2xl justify-center md:w-1/2"
+                className="flex items-center gap-4 cursor-pointer hover:bg-foreground hover:text-background text-foreground transition-opacity bg-background p-4 rounded-2xl justify-center md:w-1/2 w-full"
                 onClick={() => handleOpenMap(branch.placeId)}
               >
-                <FaLocationDot className="text-xl flex-shrink-0 mt-1" />
-                <p className="md:text-4xl text-3xl leading-relaxed">
+                <FaLocationDot className="text-xl mt-1" />
+                <p className="md:text-4xl text-2xl text-left">
                   {branch.address}
                 </p>
               </div>

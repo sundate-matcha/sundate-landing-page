@@ -1,0 +1,36 @@
+interface NavItem {
+  href: string
+  label: string
+}
+
+interface DesktopNavSectionProps {
+  items: NavItem[]
+  navLinkClassName: string
+  ctaButtonClassName: string
+  onBookingClick: () => void
+}
+
+function DesktopNavSection({
+  items,
+  navLinkClassName,
+  ctaButtonClassName,
+  onBookingClick,
+}: DesktopNavSectionProps) {
+  return (
+    <nav className={'hidden md:flex md:items-center'}>
+      <div className={'flex items-center gap-6 mr-6'}>
+        {items.map((item) => (
+          <a key={item.label} href={item.href} className={navLinkClassName}>
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <button className={ctaButtonClassName} onClick={onBookingClick}>
+        Reservation
+      </button>
+    </nav>
+  )
+}
+
+export default DesktopNavSection

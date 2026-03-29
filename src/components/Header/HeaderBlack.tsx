@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import Logo from '../../assets/images/logo.png'
-import LogoText from '../../assets/images/typeface.png'
 import MobileMenuToggle, {
   MobileNavDrawer,
 } from './components/MobileNavSection'
 import DesktopNavSection from './components/DesktopNavSection'
+import Logo from '../../assets/images/logo.png'
+import LogoText from '../../assets/images/typeface.png'
 
 const NAV_ITEMS = [
   { href: '/', label: 'About Us' },
@@ -19,7 +19,7 @@ const NAV_LINK_CLASS =
 const CTA_BUTTON_CLASS =
   'text-4xl px-4 py-2 rounded-lg md:bg-foreground bg-background md:text-background text-foreground transition-all duration-200 '
 
-function Header() {
+function HeaderBlack() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   const handleBookingClick = () => {
@@ -51,8 +51,7 @@ function Header() {
 
   return (
     <header
-      className={`px-4 md:px-20 py-6 flex items-center justify-between w-full h-[10%] z-50 text-foreground fixed top-0 left-0 transition-colors duration-500 bg-background
-      `}
+      className={`px-4 md:px-20 py-6 flex items-center justify-between w-full h-[10%] z-50 text-foreground fixed top-0 left-0 transition-colors duration-500 bg-black`}
     >
       <a
         href={'/'}
@@ -92,4 +91,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HeaderBlack

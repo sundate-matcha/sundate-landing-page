@@ -6,8 +6,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 import '../styles/loader.scss'
-import Header from './Header/Header'
-import Footer from './Footer/Footer'
+
 
 function Loader() {
   const [fadeOut, setFadeOut] = useState(false)

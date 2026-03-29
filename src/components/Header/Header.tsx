@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { href: '#aboutus', label: 'About Us' },
   { href: '#menu', label: 'Menu' },
   { href: '#', label: 'Workshop' },
-  { href: '#contact', label: 'Contact' },
+  // { href: '#contact', label: 'Contact' },
 ]
 
 const NAV_LINK_CLASS =
@@ -141,7 +141,7 @@ function Header({ isMenuVisible = false }: HeaderProps) {
                 key={`mobile-${item.label}`}
                 href={item.href}
                 className={
-                  'text-4xl text-background border-b border-black/10 pb-2'
+                  'text-4xl text-background pb-2'
                 }
                 onClick={closeDrawer}
               >

@@ -50,7 +50,7 @@ export function MainLayout() {
           <Menu />
         </div>
       </main>
-      <div className="relative z-10">
+      <div>
         <Footer isMenuVisible={isMenuVisible} />
       </div>
     </>

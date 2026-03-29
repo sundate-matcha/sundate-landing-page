@@ -182,23 +182,23 @@ function Menu() {
           <button
             onClick={goToPrevious}
             aria-label="Previous slide"
-            className="shrink-0 p-2 rounded-lg text-foreground hover:opacity-80 transition-opacity"
+            className="shrink-0 p-2 rounded-lg text-foreground transition-opacity"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={30} />
           </button>
 
           <div
-            className="overflow-hidden rounded-xl border-4 border-black bg-black transition-[width] duration-500 ease-out"
+            className="overflow-hidden bg-transparent transition-[width] duration-500"
             style={{ width: `${currentSection.mobileWidth}px` }}
           >
             <AnimatePresence mode="wait" custom={slideDirection}>
               <motion.div
                 key={currentSection.id}
                 custom={slideDirection}
-                initial={{ x: slideDirection > 0 ? 40 : -40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: slideDirection > 0 ? -40 : 40, opacity: 0 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
+                initial={{ x: slideDirection > 0 ? '100%' : '-100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: slideDirection > 0 ? '-100%' : '100%' }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="flex flex-col"
               >
                 {currentSection.items.map((item, idx) => (
@@ -215,9 +215,9 @@ function Menu() {
           <button
             onClick={goToNext}
             aria-label="Next slide"
-            className="shrink-0 p-2 rounded-lg text-foreground hover:opacity-80 transition-opacity"
+            className="shrink-0 p-2 rounded-lg text-foreground transition-opacity"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={30} />
           </button>
         </div>
 

@@ -1,4 +1,5 @@
 import { XIcon, MenuIcon } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 interface NavItem {
   href: string
@@ -78,14 +79,14 @@ export function MobileNavDrawer({
 
         <nav className={'px-5 py-6 flex flex-col gap-4'}>
           {items.map((item) => (
-            <a
+            <Link
               key={`mobile-${item.label}`}
-              href={item.href}
+              to={item.href}
               className={'text-4xl text-background pb-2'}
               onClick={onClose}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
 
           <button

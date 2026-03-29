@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 interface NavItem {
   href: string
   label: string
@@ -20,9 +22,9 @@ function DesktopNavSection({
     <nav className={'hidden md:flex md:items-center'}>
       <div className={'flex items-center gap-6 mr-6'}>
         {items.map((item) => (
-          <a key={item.label} href={item.href} className={navLinkClassName}>
+          <Link key={item.label} to={item.href} className={navLinkClassName}>
             {item.label}
-          </a>
+          </Link>
         ))}
       </div>
 

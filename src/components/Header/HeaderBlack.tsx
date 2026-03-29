@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import MobileMenuToggle, {
   MobileNavDrawer,
 } from './components/MobileNavSection'
@@ -53,8 +54,8 @@ function HeaderBlack() {
     <header
       className={`px-4 md:px-20 py-6 flex items-center justify-between w-full h-[10%] z-50 text-foreground fixed top-0 left-0 transition-colors duration-500 bg-black`}
     >
-      <a
-        href={'/'}
+      <Link
+        to={'/'}
         className={
           'cursor-pointer justify-center flex items-center gap-4 flex-row '
         }
@@ -66,7 +67,7 @@ function HeaderBlack() {
           alt="Sundate Logo Text"
           className={'md:h-14 h-10'}
         />
-      </a>
+      </Link>
 
       <MobileMenuToggle
         isOpen={isDrawerOpen}

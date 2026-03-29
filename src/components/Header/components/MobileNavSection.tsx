@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import { XIcon, MenuIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { ChevronDown } from 'lucide-react'
 
 interface NavItem {
   href: string
   label: string
+  children?: NavItem[]
 }
 
 interface MobileMenuToggleProps {
@@ -41,6 +44,8 @@ export function MobileNavDrawer({
   onClose,
   onBookingClick,
 }: MobileNavDrawerProps) {
+  const [openSubmenuLabel, setOpenSubmenuLabel] = useState<string | null>(null)
+
   return (
     <div
       className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
@@ -78,16 +83,60 @@ export function MobileNavDrawer({
         </div>
 
         <nav className={'px-5 py-6 flex flex-col gap-4'}>
-          {items.map((item) => (
-            <Link
-              key={`mobile-${item.label}`}
-              to={item.href}
-              className={'text-4xl text-background pb-2'}
-              onClick={onClose}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {items.map((item) => {
+            if (!item.children || item.children.length === 0) {
+              return (
+                <Link
+                  key={`mobile-${item.label}`}
+                  to={item.href}
+                  className={'text-4xl text-background pb-2'}
+                  onClick={onClose}
+                >
+                  {item.label}
+                </Link>
+              )
+            }
+
+            const isSubmenuOpen = openSubmenuLabel === item.label
+
+            return (
+              <div key={`mobile-parent-${item.label}`} className="pb-2">
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between text-4xl text-background"
+                  aria-expanded={isSubmenuOpen}
+                  aria-haspopup="menu"
+                  onClick={() =>
+                    setOpenSubmenuLabel((currentLabel) =>
+                      currentLabel === item.label ? null : item.label,
+                    )
+                  }
+                >
+                  <span>{item.label}</span>
+                  <ChevronDown
+                    className={`size-6 transition-transform duration-200 ${
+                      isSubmenuOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {isSubmenuOpen ? (
+                  <div className="mt-2 ml-2 flex flex-col gap-2 border-l border-background/30 pl-4">
+                    {item.children.map((child) => (
+                      <Link
+                        key={`mobile-child-${item.label}-${child.label}`}
+                        to={child.href}
+                        className="text-3xl text-background/90"
+                        onClick={onClose}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            )
+          })}
 
           <button
             className={`${ctaButtonClassName} mt-2 w-full`}

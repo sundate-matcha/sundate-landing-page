@@ -1,91 +1,13 @@
 import MyFigure from '@/components/MyFigure.tsx'
-import A4Dessert from '@/assets/images/menu/A4_Dessert.png'
-import AddOn from '@/assets/images/menu/add on.png'
-import CoffeeMenu from '@/assets/images/menu/coffee menu.png'
-import DairyMatchaMenu from '@/assets/images/menu/dairy matcha menu.png'
-import FruityMatchaMenu from '@/assets/images/menu/fruity matcha menu.png'
-import GenmaichaMenu from '@/assets/images/menu/genmaicha menu.png'
-import HojichaMenu from '@/assets/images/menu/hojicha menu.png'
-import MatchaMenu from '@/assets/images/menu/matcha menu.png'
-import Vector from '@/assets/images/menu/vector.png'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
+import menuSections from './utils/sections'
+import menuImages from './utils/images'
 
-const menuImages = {
-  a4Dessert: A4Dessert,
-  addOn: AddOn,
-  coffeeMenu: CoffeeMenu,
-  dairyMatchaMenu: DairyMatchaMenu,
-  fruityMatchaMenu: FruityMatchaMenu,
-  genmaichaMenu: GenmaichaMenu,
-  hojichaMenu: HojichaMenu,
-  matchaMenu: MatchaMenu,
-  vector: Vector,
-} as const
+const images = menuImages.desktop
 
-const menuSections = [
-  {
-    id: 'section1',
-    mobileWidth: 220,
-    items: [
-      {
-        imgSource: menuImages.matchaMenu,
-        imgAlt:
-          'Menu về những món ăn vặt của chúng tớ gồm khoai tây que lắc phô mai và tóp mỡ chiên mắm tỏi',
-      },
-    ],
-  },
-  {
-    id: 'section2',
-    mobileWidth: 300,
-    items: [
-      {
-        imgSource: menuImages.fruityMatchaMenu,
-        imgAlt: 'Menu về các loại matcha có chứa trái cây của chúng tớ',
-      },
-      {
-        imgSource: menuImages.dairyMatchaMenu,
-        imgAlt: 'Menu về các loại matcha có chứa sữa của chúng tớ',
-      },
-      {
-        imgSource: menuImages.addOn,
-        imgAlt: 'Menu về các món ăn vặt của chúng tớ',
-      },
-    ],
-  },
-  {
-    id: 'section3',
-    mobileWidth: 300,
-    items: [
-      {
-        imgSource: menuImages.hojichaMenu,
-        imgAlt: 'Menu về thức uống của chúng tớ gồm Matcha và Dalgona coffee',
-      },
-      {
-        imgSource: menuImages.genmaichaMenu,
-        imgAlt: 'Menu về thức uống của chúng tớ gồm Matcha và Dalgona coffee',
-      },
-      {
-        imgSource: menuImages.coffeeMenu,
-        imgAlt: 'Menu về thức uống của chúng tớ gồm Matcha và Dalgona coffee',
-      },
-    ],
-  },
-  {
-    id: 'section4',
-    mobileWidth: 300,
-    items: [
-      {
-        imgSource: menuImages.a4Dessert,
-        imgAlt:
-          'Menu về những món ăn vặt của chúng tớ gồm khoai tây que lắc phô mai và tóp mỡ chiên mắm tỏi',
-      },
-    ],
-  },
-]
-
-function Menu() {
+function SeasonalMenu() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slideDirection, setSlideDirection] = useState(1)
 
@@ -104,39 +26,26 @@ function Menu() {
     <div
       id={'menu'}
       className={
-        'bg-[#521813] px-4 md:px-6 py-8 md:py-12 min-h-screen items-center flex flex-row justify-center gap-10'
+        'bg-[#521813] px-2 md:px-6 py-8 md:py-12 h-screen items-center flex flex-col justify-center  md:gap-10 gap-4'
       }
     >
       {/* Desktop Layout */}
-      <div
-        className={
-          'hidden md:flex w-full max-w-[1450px] overflow-hidden rounded-xl border-4 border-black bg-black'
-        }
-      >
+      <div className="hidden md:flex flex-row h-[500px] w-[1450px] gap-10">
         <div
-          className={'flex flex-row md:items-stretch md:justify-start w-full'}
-        >
-          {/* section 1 */}
-          <div className="md:w-[242.08px]">
-            <MyFigure imgSource={menuImages.matchaMenu} />
-          </div>
-          {/* section 2 */}
-          <div className="md:w-[339.88px]">
-            <MyFigure imgSource={menuImages.fruityMatchaMenu} />
-            <MyFigure imgSource={menuImages.dairyMatchaMenu} />
-            <MyFigure imgSource={menuImages.addOn} />
-          </div>
-          {/* section 3 */}
-          <div className="md:w-[381.17px]">
-            <MyFigure imgSource={menuImages.hojichaMenu} />
-            <MyFigure imgSource={menuImages.genmaichaMenu} />
-            <MyFigure imgSource={menuImages.coffeeMenu} />
-          </div>
-          {/* section 4 */}
-          <div className="md:w-[482.06px]">
-            <MyFigure imgSource={menuImages.a4Dessert} />
-          </div>
-        </div>
+          className={
+            'w-full h-full overflow-hidden rounded-xl border-4 border-black bg-black/50'
+          }
+        ></div>
+        <div
+          className={
+            'w-full h-full overflow-hidden rounded-xl border-4 border-black bg-black/50'
+          }
+        ></div>
+        <div
+          className={
+            'w-full h-full overflow-hidden rounded-xl border-4 border-black bg-black/50'
+          }
+        ></div>
       </div>
 
       {/* Mobile Carousel Layout */}
@@ -145,36 +54,23 @@ function Menu() {
           <button
             onClick={goToPrevious}
             aria-label="Previous slide"
-            className="shrink-0 p-2 rounded-lg text-foreground transition-opacity"
+            className="shrink-0 rounded-lg text-foreground transition-opacity"
           >
             <ChevronLeft size={30} />
           </button>
 
-          <div
-            className="overflow-hidden bg-transparent transition-[width] duration-500"
-            style={{ width: `${currentSection.mobileWidth}px` }}
-          >
-            <AnimatePresence mode="wait" custom={slideDirection}>
-              <motion.div
-                key={currentSection.id}
-                custom={slideDirection}
-                initial={{ x: slideDirection > 0 ? '100%' : '-100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: slideDirection > 0 ? '-100%' : '100%' }}
-                transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="flex flex-col"
-              >
-                {currentSection.items.map((item, idx) => (
-                  <MyFigure key={idx} imgSource={item.imgSource} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
+          <div className="overflow-hidden bg-transparent transition-[width] w-[70%] duration-500 h-[500px] flex items-center justify-center">
+            <div
+              className={
+                'w-full h-full overflow-hidden rounded-xl border-4 border-black bg-black/50'
+              }
+            ></div>
           </div>
 
           <button
             onClick={goToNext}
             aria-label="Next slide"
-            className="shrink-0 p-2 rounded-lg text-foreground transition-opacity"
+            className="shrink-0 rounded-lg text-foreground transition-opacity"
           >
             <ChevronRight size={30} />
           </button>
@@ -184,17 +80,11 @@ function Menu() {
       </div>
 
       {/* Desktop Vector Section */}
-      <div
-        className={
-          'hidden md:flex flex-col items-center gap-2 text-foreground text-6xl text-center '
-        }
-      >
-        <img src={menuImages.vector} alt="Vector" />
-        <p>Click Each Section</p>
-        <p>To View</p>
+      <div className={'flex items-center text-foreground text-6xl'}>
+        <p>Seasonal Menu</p>
       </div>
     </div>
   )
 }
 
-export default Menu
+export default SeasonalMenu

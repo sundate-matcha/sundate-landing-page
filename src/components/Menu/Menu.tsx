@@ -1,89 +1,11 @@
 import MyFigure from '@/components/MyFigure.tsx'
-import A4Dessert from '@/assets/images/menu/A4_Dessert.png'
-import AddOn from '@/assets/images/menu/add on.png'
-import CoffeeMenu from '@/assets/images/menu/coffee menu.png'
-import DairyMatchaMenu from '@/assets/images/menu/dairy matcha menu.png'
-import FruityMatchaMenu from '@/assets/images/menu/fruity matcha menu.png'
-import GenmaichaMenu from '@/assets/images/menu/genmaicha menu.png'
-import HojichaMenu from '@/assets/images/menu/hojicha menu.png'
-import MatchaMenu from '@/assets/images/menu/matcha menu.png'
-import Vector from '@/assets/images/menu/vector.png'
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
+import menuSections from './utils/sections'
+import menuImages from './utils/images'
 
-const menuImages = {
-  a4Dessert: A4Dessert,
-  addOn: AddOn,
-  coffeeMenu: CoffeeMenu,
-  dairyMatchaMenu: DairyMatchaMenu,
-  fruityMatchaMenu: FruityMatchaMenu,
-  genmaichaMenu: GenmaichaMenu,
-  hojichaMenu: HojichaMenu,
-  matchaMenu: MatchaMenu,
-  vector: Vector,
-} as const
-
-const menuSections = [
-  {
-    id: 'section1',
-    mobileWidth: 220,
-    items: [
-      {
-        imgSource: menuImages.matchaMenu,
-        imgAlt:
-          'Menu về những món ăn vặt của chúng tớ gồm khoai tây que lắc phô mai và tóp mỡ chiên mắm tỏi',
-      },
-    ],
-  },
-  {
-    id: 'section2',
-    mobileWidth: 300,
-    items: [
-      {
-        imgSource: menuImages.fruityMatchaMenu,
-        imgAlt: 'Menu về các loại matcha có chứa trái cây của chúng tớ',
-      },
-      {
-        imgSource: menuImages.dairyMatchaMenu,
-        imgAlt: 'Menu về các loại matcha có chứa sữa của chúng tớ',
-      },
-      {
-        imgSource: menuImages.addOn,
-        imgAlt: 'Menu về các món ăn vặt của chúng tớ',
-      },
-    ],
-  },
-  {
-    id: 'section3',
-    mobileWidth: 300,
-    items: [
-      {
-        imgSource: menuImages.hojichaMenu,
-        imgAlt: 'Menu về thức uống của chúng tớ gồm Matcha và Dalgona coffee',
-      },
-      {
-        imgSource: menuImages.genmaichaMenu,
-        imgAlt: 'Menu về thức uống của chúng tớ gồm Matcha và Dalgona coffee',
-      },
-      {
-        imgSource: menuImages.coffeeMenu,
-        imgAlt: 'Menu về thức uống của chúng tớ gồm Matcha và Dalgona coffee',
-      },
-    ],
-  },
-  {
-    id: 'section4',
-    mobileWidth: 300,
-    items: [
-      {
-        imgSource: menuImages.a4Dessert,
-        imgAlt:
-          'Menu về những món ăn vặt của chúng tớ gồm khoai tây que lắc phô mai và tóp mỡ chiên mắm tỏi',
-      },
-    ],
-  },
-]
+const images = menuImages.desktop
 
 function Menu() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -104,7 +26,7 @@ function Menu() {
     <div
       id={'menu'}
       className={
-        'bg-[#521813] px-4 md:px-6 py-8 md:py-12 min-h-screen items-center flex flex-row justify-center gap-10'
+        'bg-[#521813] px-2 md:px-6 py-8 md:py-12 h-screen items-center flex flex-row justify-center gap-10'
       }
     >
       {/* Desktop Layout */}
@@ -118,23 +40,23 @@ function Menu() {
         >
           {/* section 1 */}
           <div className="md:w-[242.08px]">
-            <MyFigure imgSource={menuImages.matchaMenu} />
+            <MyFigure imgSource={images.matchaMenu} />
           </div>
           {/* section 2 */}
           <div className="md:w-[339.88px]">
-            <MyFigure imgSource={menuImages.fruityMatchaMenu} />
-            <MyFigure imgSource={menuImages.dairyMatchaMenu} />
-            <MyFigure imgSource={menuImages.addOn} />
+            <MyFigure imgSource={images.fruityMatchaMenu} />
+            <MyFigure imgSource={images.dairyMatchaMenu} />
+            <MyFigure imgSource={images.addOn} />
           </div>
           {/* section 3 */}
           <div className="md:w-[381.17px]">
-            <MyFigure imgSource={menuImages.hojichaMenu} />
-            <MyFigure imgSource={menuImages.genmaichaMenu} />
-            <MyFigure imgSource={menuImages.coffeeMenu} />
+            <MyFigure imgSource={images.hojichaMenu} />
+            <MyFigure imgSource={images.genmaichaMenu} />
+            <MyFigure imgSource={images.coffeeMenu} />
           </div>
           {/* section 4 */}
           <div className="md:w-[482.06px]">
-            <MyFigure imgSource={menuImages.a4Dessert} />
+            <MyFigure imgSource={images.a4Dessert} />
           </div>
         </div>
       </div>
@@ -145,7 +67,7 @@ function Menu() {
           <button
             onClick={goToPrevious}
             aria-label="Previous slide"
-            className="shrink-0 p-2 rounded-lg text-foreground transition-opacity"
+            className="shrink-0 rounded-lg text-foreground transition-opacity"
           >
             <ChevronLeft size={30} />
           </button>
@@ -174,7 +96,7 @@ function Menu() {
           <button
             onClick={goToNext}
             aria-label="Next slide"
-            className="shrink-0 p-2 rounded-lg text-foreground transition-opacity"
+            className="shrink-0 rounded-lg text-foreground transition-opacity"
           >
             <ChevronRight size={30} />
           </button>
@@ -189,7 +111,7 @@ function Menu() {
           'hidden md:flex flex-col items-center gap-2 text-foreground text-6xl text-center '
         }
       >
-        <img src={menuImages.vector} alt="Vector" />
+        <img src={images.vector} alt="Vector" />
         <p>Click Each Section</p>
         <p>To View</p>
       </div>

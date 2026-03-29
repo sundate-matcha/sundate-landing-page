@@ -1,8 +1,14 @@
 import Menu from '@/components/Menu/Menu'
+import SeasonalMenu from '@/components/Menu/SeasonalMenu'
 import HeaderBlack from '@/components/Header/HeaderBlack'
 import FooterBlack from '@/components/Footer/FooterBlack'
+import { useSearchParams } from 'react-router-dom'
 
 export function MenuPage() {
+  const [searchParams] = useSearchParams()
+  const menuType = searchParams.get('type')
+  const isSeasonalMenu = menuType === 'seasonal'
+
   return (
     <>
       <div>
@@ -11,7 +17,7 @@ export function MenuPage() {
 
       <main>
         <div className="relative z-10">
-          <Menu />
+          {isSeasonalMenu ? <SeasonalMenu /> : <Menu />}
         </div>
       </main>
 

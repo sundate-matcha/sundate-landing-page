@@ -9,7 +9,14 @@ import LogoText from '../../assets/images/typeface.png'
 
 const NAV_ITEMS = [
   { href: '/', label: 'About Us' },
-  { href: '/menu', label: 'Menu' },
+  {
+    href: '/menu',
+    label: 'Menu',
+    children: [
+      { href: '/menu?type=main', label: 'Main Menu' },
+      { href: '/menu?type=seasonal', label: 'Seasonal Menu' },
+    ],
+  },
   { href: '/', label: 'Workshop' },
   // { href: '#contact', label: 'Contact' },
 ]

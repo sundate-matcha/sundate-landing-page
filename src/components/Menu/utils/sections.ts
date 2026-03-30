@@ -5,7 +5,7 @@ const images = menuImages.mobile
 const menuSections = [
   {
     id: 'section1',
-    mobileWidth: 220,
+    mobileWidth: 53,
     items: [
       {
         imgSource: images.matchaMenu,
@@ -16,7 +16,7 @@ const menuSections = [
   },
   {
     id: 'section2',
-    mobileWidth: 240,
+    mobileWidth: 60,
     items: [
       {
         imgSource: images.fruityMatchaMenu,
@@ -34,7 +34,7 @@ const menuSections = [
   },
   {
     id: 'section3',
-    mobileWidth: 270,
+    mobileWidth: 65,
     items: [
       {
         imgSource: images.hojichaMenu,
@@ -52,7 +52,7 @@ const menuSections = [
   },
   {
     id: 'section4',
-    mobileWidth: 340,
+    mobileWidth: 85,
     items: [
       {
         imgSource: images.a4Dessert,

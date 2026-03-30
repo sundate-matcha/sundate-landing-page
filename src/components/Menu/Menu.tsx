@@ -74,7 +74,7 @@ function Menu() {
 
           <div
             className="overflow-hidden bg-transparent transition-[width] duration-500"
-            style={{ width: `${currentSection.mobileWidth}px` }}
+            style={{ width: `${currentSection.mobileWidth}%` }}
           >
             <AnimatePresence mode="wait" custom={slideDirection}>
               <motion.div

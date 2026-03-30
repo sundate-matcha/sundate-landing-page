@@ -1,14 +1,14 @@
 // import MyFigure from '@/components/MyFigure.tsx'
-import { useState } from 'react'
+// import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 // import { AnimatePresence, motion } from 'framer-motion'
-import menuSections from './utils/sections'
+// import menuSections from './utils/sections'
 // import menuImages from './utils/images'
 
 // const images = menuImages.desktop
 
 function SeasonalMenu() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  // const [currentSlide, setCurrentSlide] = useState(0)
   // const [slideDirection, setSlideDirection] = useState(1)
 
   // const goToPrevious = () => {
@@ -21,7 +21,7 @@ function SeasonalMenu() {
   //   setCurrentSlide((prev) => (prev === menuSections.length - 1 ? 0 : prev + 1))
   // }
 
-  const currentSection = menuSections[currentSlide]
+  // const currentSection = menuSections[currentSlide]
   return (
     <div
       id={'menu'}

@@ -4,6 +4,8 @@ import { MainLayout } from './pages/MainLayout.tsx'
 import MenuPage from './pages/MenuPage.tsx'
 import Loader from '@/components/Loader'
 import { useEffect, useState } from 'react'
+import { WorkshopPage } from './pages/WorkshopPage.tsx'
+import { AboutPage } from './pages/AboutPage.tsx'
 
 function App() {
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -25,6 +27,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />} />
         <Route path="/menu" element={<MenuPage />} />
+        <Route path="/workshop" element={<WorkshopPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Router>
   )

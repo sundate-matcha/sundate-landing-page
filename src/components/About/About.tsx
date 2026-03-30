@@ -19,22 +19,23 @@ function About() {
     >
       <div
         className={
-          'flex flex-col gap-6 md:flex-row md:items-start md:justify-between mx-auto w-[min(1200px,92%)]'
+          'flex flex-col gap-6 md:flex-row md:items-center md:justify-between mx-auto w-[min(1200px,92%)]'
         }
       >
-        <h2
-          className={
-            'text-4xl font-black leading-none tracking-tight text-black md:text-6xl'
-          }
-        >
-          About Sundate
-        </h2>
-        <p className={'max-w-xl text-sm leading-7 text-black/80 md:text-base'}>
-          Sundate la khong gian am thuc va gap go, noi moi bua an duoc tao nen
-          tu nguyen lieu tuoi, huong vi tron ven va su cham chut trong tung chi
-          tiet. Chung toi tin rang am thuc ngon nhat khi duoc chia se cung nhau
-          trong mot khong gian am cung, thoai mai va day nang luong tich cuc.
-        </p>
+        <div>
+          <h2 className={'text-6xl tracking-tight text-black md:text-8xl'}>
+            About Sundate
+          </h2>
+        </div>
+        <div>
+          <p className={'max-w-xl text-xl leading-7 text-black md:text-4xl'}>
+            Sundate la khong gian am thuc va gap go, noi moi bua an duoc tao nen
+            tu nguyen lieu tuoi, huong vi tron ven va su cham chut trong tung
+            chi tiet. Chung toi tin rang am thuc ngon nhat khi duoc chia se cung
+            nhau trong mot khong gian am cung, thoai mai va day nang luong tich
+            cuc.
+          </p>
+        </div>
       </div>
 
       <Marquee pauseOnHover className={'mt-9 [--duration:10s]'}>

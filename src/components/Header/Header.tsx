@@ -6,20 +6,8 @@ import MobileMenuToggle, {
   MobileNavDrawer,
 } from './components/MobileNavSection'
 import DesktopNavSection from './components/DesktopNavSection'
-
-const NAV_ITEMS = [
-  { href: '/', label: 'About Us' },
-  {
-    href: '/menu',
-    label: 'Menu',
-    children: [
-      { href: '/menu?type=main', label: 'Main Menu' },
-      { href: '/menu?type=seasonal', label: 'Seasonal Menu' },
-    ],
-  },
-  { href: '/', label: 'Workshop' },
-  // { href: '#contact', label: 'Contact' },
-]
+import NAV_ITEMS from './utils/item'
+import DialModal from '@/components/Footer/components/DialModal.tsx'
 
 const NAV_LINK_CLASS =
   'text-4xl relative px-4 hover:border-b-0 duration-200 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-foreground before:transition-all before:duration-300 hover:before:left-0 hover:before:w-full'
@@ -29,9 +17,11 @@ const CTA_BUTTON_CLASS =
 
 function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [isDialModalOpen, setIsDialModalOpen] = useState(false)
 
   const handleBookingClick = () => {
-    window.open('https://sundate-reservation.vercel.app', '_blank')
+    // window.open('https://sundate-reservation.vercel.app', '_blank')
+    setIsDialModalOpen(true)
   }
 
   useEffect(() => {
@@ -95,6 +85,10 @@ function Header() {
         ctaButtonClassName={CTA_BUTTON_CLASS}
         onClose={closeDrawer}
         onBookingClick={handleBookingClick}
+      />
+      <DialModal
+        isOpen={isDialModalOpen}
+        onClose={() => setIsDialModalOpen(false)}
       />
     </header>
   )

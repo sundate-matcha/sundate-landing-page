@@ -23,7 +23,7 @@ function Footer({ isMenuVisible = false }: FooterProps) {
   return (
     <footer
       id={'contact'}
-      className={`md:px-10 px-4 py-4 text-center fixed bottom-0 left-0 w-full h-[7%] z-50 flex flex-row justify-between items-center transition-colors duration-500 ${
+      className={`md:px-10 px-4 py-4 text-center fixed bottom-0 left-0 w-full h-[7vh] z-50 flex flex-row justify-between items-center transition-colors duration-500 ${
         isMenuVisible
           ? 'bg-black text-foreground'
           : 'bg-background text-foreground'

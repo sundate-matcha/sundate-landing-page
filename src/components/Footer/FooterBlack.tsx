@@ -19,7 +19,7 @@ function FooterBlack() {
   return (
     <footer
       id={'contact'}
-      className="md:px-10 px-4 py-4 text-center fixed bottom-0 left-0 w-full h-[7%] z-50 flex flex-row justify-between items-center bg-black text-foreground"
+      className="md:px-10 px-4 py-4 text-center fixed bottom-0 left-0 w-full h-[7vh] z-50 flex flex-row justify-between items-center bg-black text-foreground"
     >
       {/* Left section */}
       <div className="flex items-center justify-center gap-4 md:gap-8">

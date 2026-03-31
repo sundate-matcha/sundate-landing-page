@@ -26,7 +26,7 @@ function Menu() {
     <div
       id={'menu'}
       className={
-        'bg-[#521813] px-2 md:px-6 pb-4 md:pb-0 h-screen items-center flex flex-row justify-center gap-10'
+        'bg-[#521813] px-2 md:px-6 h-screen items-center flex flex-row justify-center gap-10'
       }
     >
       {/* Desktop Layout */}

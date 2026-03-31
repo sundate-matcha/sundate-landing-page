@@ -1,0 +1,75 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Tulip Bag Charm",
+      "dateFrom": "5/3",
+      "dateTo": "10/4",
+      "price": "25,000",
+      "unit": "/yd",
+      "isAvailable": "true",
+      "image": "/images/workshop/tulip-bag-charm.jpg"
+    },
+
+    {
+      "id": 2,
+      "name": "Draw A Tea Holiday",
+      "dateFrom": "5/3",
+      "dateTo": "10/4",
+      "price": "Free",
+      "unit": "",
+      "isAvailable": "false",
+      "image": "/images/workshop/draw-tea-holiday.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Xmas Tree",
+      "dateFrom": "10/11",
+      "dateTo": "31/12",
+      "price": "50,000 - 80,000",
+      "unit": "/yd",
+      "isAvailable": "false",
+      "image": "/images/workshop/xmas-tree.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Flower Beads",
+      "dateFrom": "13/10",
+      "dateTo": "2/11",
+      "price": "30,000",
+      "unit": "/yd",
+      "isAvailable": "false",
+      "image": "/images/workshop/flower-beads.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mid Autumn Lantern",
+      "dateFrom": "15/9",
+      "dateTo": "6/10",
+      "price": "60,000",
+      "unit": "/yd",
+      "isAvailable": "false",
+      "image": "/images/workshop/mid-autumn-lantern.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mid Autumn Lantern",
+      "dateFrom": "15/9",
+      "dateTo": "6/10",
+      "price": "60,000",
+      "unit": "/yd",
+      "isAvailable": "false",
+      "image": "/images/workshop/mid-autumn-lantern.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mid Autumn Lantern",
+      "dateFrom": "15/9",
+      "dateTo": "6/10",
+      "price": "60,000",
+      "unit": "/yd",
+      "isAvailable": "false",
+      "image": "/images/workshop/mid-autumn-lantern.jpg"
+    }
+  ]
+}

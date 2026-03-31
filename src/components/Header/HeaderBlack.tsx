@@ -49,7 +49,7 @@ function HeaderBlack() {
 
   return (
     <header
-      className={`px-4 md:px-20 py-6 flex items-center justify-between w-full h-[10%] z-50 text-foreground fixed top-0 left-0 transition-colors duration-500 bg-black`}
+      className={`px-4 md:px-20 py-6 flex items-center justify-between w-full h-[10vh] z-50 text-foreground fixed top-0 left-0 transition-colors duration-500 bg-black`}
     >
       <Link
         to={'/'}
@@ -62,7 +62,7 @@ function HeaderBlack() {
         <img
           src={LogoText}
           alt="Sundate Logo Text"
-          className={'md:h-14 h-10'}
+          className={'h-14 hidden md:inline-block'}
         />
       </Link>
 

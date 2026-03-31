@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Logo from '../../assets/images/logo.png'
-import LogoText from '../../assets/images/typeface.png'
+import Logo from '@/assets/images/logo.png'
+import LogoText from '@/assets/images/typeface.png'
 import MobileMenuToggle, {
   MobileNavDrawer,
 } from './components/MobileNavSection'
 import DesktopNavSection from './components/DesktopNavSection'
 import NAV_ITEMS from './utils/item'
-import DialModal from '@/components/Footer/components/DialModal.tsx'
+import DialModal from '@/components/navigation/Footer/components/DialModal.tsx'
 
 const NAV_LINK_CLASS =
   'text-4xl relative px-4 hover:border-b-0 duration-200 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-[2px] before:bg-foreground before:transition-all before:duration-300 hover:before:left-0 hover:before:w-full'

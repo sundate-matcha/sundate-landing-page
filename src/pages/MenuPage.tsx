@@ -1,7 +1,7 @@
 import Menu from '@/components/Menu/Menu'
 import SeasonalMenu from '@/components/Menu/SeasonalMenu'
-import HeaderBlack from '@/components/Header/HeaderBlack'
-import FooterBlack from '@/components/Footer/FooterBlack'
+import HeaderBlack from '@/components/navigation/Header/HeaderBlack'
+import FooterBlack from '@/components/navigation/Footer/FooterBlack'
 import { useSearchParams } from 'react-router-dom'
 
 export function MenuPage() {

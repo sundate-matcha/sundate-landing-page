@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
+import Footer from '@/components/navigation/Footer/Footer'
+import Header from '@/components/navigation/Header/Header'
 import Workshop from '@/components/Workshop/Workshop'
 
 export function WorkshopPage() {

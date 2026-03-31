@@ -9,8 +9,8 @@ import {
   FaLocationDot,
 } from 'react-icons/fa6'
 import { Separator } from '@/components/ui/separator.tsx'
-import LocationModal from '@/components/Footer/components/LocationModal.tsx'
-import DialModal from '@/components/Footer/components/DialModal.tsx'
+import LocationModal from '@/components/navigation/Footer/components/LocationModal.tsx'
+import DialModal from '@/components/navigation/Footer/components/DialModal.tsx'
 
 function FooterBlack() {
   const [isLocationModalOpen, setIsLocationModalOpen] = useState(false)

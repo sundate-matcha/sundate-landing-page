@@ -1,6 +1,5 @@
-import Header from '@/components/Header/Header'
-// import DockNav from '@/components/DockNav.tsx'
-import Footer from '@/components/Footer/Footer'
+import Footer from '@/components/navigation/Footer/Footer'
+import Header from '@/components/navigation/Header/Header'
 import BackgroundImage from '@/components/BackgroundImage/BackgroundImage'
 // import Hero from '@/components/Hero.tsx'
 
